@@ -37,8 +37,9 @@ void DFS(int i) {
 }
 
 int main() {
+    printf("\n\n");
     printf("DFS Traversal: ");
     DFS(0);
-    printf("\n");
+    printf("\n\n");
     return 0;
 }

@@ -63,7 +63,7 @@ void BFS(int start, int graph[][n]) {
     q.arr = (int*)malloc(q.size * sizeof(int));
 
     printf("BFS Traversal: ");
-    printf("%d ", start);
+    printf("%d ", start+1);
     visited[start] = 1;
     enqueue(&q, start);
 
@@ -71,7 +71,7 @@ void BFS(int start, int graph[][n]) {
         int node = dequeue(&q);
         for (int j = 0; j < n; j++) {
             if (graph[node][j] == 1 && !visited[j]) {
-                printf("%d ", j);
+                printf("%d ", j+1);
                 visited[j] = 1;
                 enqueue(&q, j);
             }
