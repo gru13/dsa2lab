@@ -1,4 +1,4 @@
-class Qtack:
+class Stack:
     def __init__(self, Stack=[]) -> None:
         self.__stack: list = Stack
 
@@ -76,16 +76,34 @@ class Graph:
             print(a, ':', self.__graph[a])
         print("--------------------")
 
+    def numberOfVertices(self):
+        return len(self.__graph)
+
 
 if __name__ == '__main__':
-    g = Graph()
-    g.add_vertice(1)
-    g.add_vertice(2)
-    g.add_vertice(3)
-    g.add_edge(1, 1)
-    g.add_edge(1, 3)
-    g.add_vertice(4)
-    g.add_edge(4, 3)
-    g.Print_adjList()
-    g.Print_adjMat()
-    pass
+    # g = Graph()
+    # g.add_vertice(1)
+    # g.add_vertice(2)
+    # g.add_vertice(3)
+    # g.add_edge(1, 1)
+    # g.add_edge(1, 3)
+    # g.add_vertice(4)
+    # g.add_edge(4, 3)
+    # g.Print_adjList()
+    # g.Print_adjMat()
+    # pass
+    G = Graph()
+    G.add_vertice(1)
+    G.add_vertice(2)
+    G.add_vertice(3)
+    G.add_vertice(4)
+    G.add_vertice(5)
+
+    G.add_edge(1, 2)
+    G.add_edge(1, 3)
+    G.add_edge(4, 2)
+    G.add_edge(4, 3)
+    G.add_edge(4, 5)
+
+    G.Print_adjList()
+    print(G.adjcent_list())
