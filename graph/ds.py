@@ -1,4 +1,4 @@
-class stack:
+class Qtack:
     def __init__(self, Stack=[]) -> None:
         self.__stack: list = Stack
 
@@ -14,7 +14,7 @@ class stack:
         print()
 
 
-class queue:
+class Queue:
     def __init__(self, Queue=[]) -> None:
         self.__Queue: list = Queue
 
@@ -88,3 +88,4 @@ if __name__ == '__main__':
     g.add_edge(4, 3)
     g.Print_adjList()
     g.Print_adjMat()
+    pass
