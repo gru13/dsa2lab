@@ -18,12 +18,27 @@ class Queue:
     def __init__(self, Queue=[]) -> None:
         self.__Queue: list = Queue
 
-    def push(self, val) -> None:
+    def enQueue(self, val) -> None:
         self.__Queue.append(val)
 
-    def pop(self):
+    def deQueue(self):
+        if self.isEmpty():
+            return
         return self.__Queue.pop(0)
 
+    def front(self):
+        return self.__Queue[0]
+
+    def isEmpty(self) -> bool:
+        if (len(self.__Queue) == 0):
+            return True
+        else:
+            return False
+    def inQueue(self, val):
+        if val in self.__Queue:
+            return True
+        else:
+            return False
     def display(self) -> None:
         for a in self.__Queue:
             print(a, end="->")
@@ -76,8 +91,23 @@ class Graph:
             print(a, ':', self.__graph[a])
         print("--------------------")
 
-    def numberOfVertices(self):
+    def numberOfVertices(self) -> int:
         return len(self.__graph)
+
+    def vertices(self) -> list:
+        return list(self.__graph.keys())
+
+    def edgesOf(self, vertice):
+        if vertice in self.__graph.keys():
+            return list(self.__graph[vertice])
+        else:
+            return None
+
+    def isVertice(self, vertice) -> bool:
+        if vertice in self.__graph.keys():
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
