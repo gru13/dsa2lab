@@ -1,6 +1,8 @@
 from ds import Stack, Graph
 
 def dfs(G:Graph, starting_vertex):
+    if not G.isVertice(starting_vertex):
+        return None
     visited = set()
     stk = Stack()
     stk.push(starting_vertex)
