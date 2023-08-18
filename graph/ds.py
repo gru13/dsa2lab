@@ -34,11 +34,13 @@ class Queue:
             return True
         else:
             return False
+
     def inQueue(self, val):
         if val in self.__Queue:
             return True
         else:
             return False
+
     def display(self) -> None:
         for a in self.__Queue:
             print(a, end="->")
