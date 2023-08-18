@@ -2,6 +2,12 @@ class Stack:
     def __init__(self, Stack=[]) -> None:
         self.__stack: list = Stack
 
+    def top(self):
+        if not self.isEmpty():
+            return self.__stack[-1]
+        else:
+            return
+
     def push(self, val) -> None:
         self.__stack.append(val)
 
@@ -12,7 +18,16 @@ class Stack:
         for a in self.__stack:
             print(a, end="->")
         print()
-
+    def isEmpty(self) -> bool:
+        if (len(self.__stack) == 0):
+            return True
+        else:
+            return False
+    def inStack(self, val):
+        if val in self.__stack:
+            return True
+        else:
+            return False
 
 class Queue:
     def __init__(self, Queue=[]) -> None:
