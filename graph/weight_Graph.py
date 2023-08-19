@@ -40,7 +40,7 @@ class Graph:
     def adjcent_list(self):
         return self.__graph
 
-    def adjcent_mat(self,ucv=0):
+    def adjcent_mat(self, ucv=0):
         """
             this give graph in form of adjecent Matrix
             ucv => unconnected vertice value
@@ -76,6 +76,21 @@ class Graph:
             print(a, ':', self.__graph[a])
         print("--------------------")
 
+    def allEdges(self, un=False) -> list:
+        allEdge = []
+        for a in self.Vertices():
+            for b in self.__graph[a]:
+                allEdge.append((a, b[0], b[1]))
+        if (un == True):
+            k = []
+            for a in allEdge:
+                l = [a[0], b[0]]
+                l.sort()
+                l.append(a[-1])
+                k.append(tuple(l))
+            allEdge = list(set(k))
+        return allEdge
+
 
 if __name__ == '__main__':
     # g = Graph()
@@ -99,7 +114,7 @@ if __name__ == '__main__':
     G.add_edge(1, 2, 5, un=True)
     G.add_edge(1, 3, 5, un=True)
     G.add_edge(2, 3, 5)
-    G.add_edge(4,4,8)
+    G.add_edge(4, 4, 8)
     # G.add_edge(4, 2, 5)
     # G.add_edge(4, 3, 5)
     # G.add_edge(4, 5, 5)

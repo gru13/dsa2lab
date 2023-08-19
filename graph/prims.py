@@ -1,12 +1,17 @@
 from weight_Graph import Graph
-
+from math import inf
 def prim(G:Graph,vertex):
     visited  = set()
+    cur_min = 0
+    visited.add(vertex)
     n = G.numberOfVertices()
     edges_Connected = set()
-    visited.add(vertex)
-    while len(visited) == n:
-        
+    result = []
+    while len(visited) != n:
+        break
+
+    # print(visited,edges_Connected)
+
 
 G = Graph()
 
@@ -29,4 +34,7 @@ if __name__ == '__main__':
     G.add_edge("E","F",3,un=True)
 
     G.Print_adjMat()
+    G.Print_adjList()
+    print(G.allEdges(un = True))
+    # prim(G,"C")
 
