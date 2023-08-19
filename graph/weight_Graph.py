@@ -40,7 +40,11 @@ class Graph:
     def adjcent_list(self):
         return self.__graph
 
-    def adjcent_mat(self):
+    def adjcent_mat(self,ucv=0):
+        """
+            this give graph in form of adjecent Matrix
+            ucv => unconnected vertice value
+        """
         n = self.numberOfVertices()
         keys: list = self.Vertices()
         mat = [[0 for a in range(n)] for _ in range(n)]
@@ -53,7 +57,7 @@ class Graph:
                     if a == b:
                         mat[a][b] = 0
                     else:
-                        mat[a][b] = inf
+                        mat[a][b] = ucv
         return keys, mat
 
     def Print_adjMat(self):
