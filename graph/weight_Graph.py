@@ -19,9 +19,15 @@ class Graph:
         else:
             return
 
-    def edgesOf(self, vertice):
+    def edgesOf(self, vertice, n = False):
         if vertice in self.__graph.keys():
-            return self.__graph[vertice]
+            if  n == False:
+                return self.__graph[vertice]
+            else:
+                k = list()
+                for a in self.__graph[vertice]:
+                    k.append((vertice, a[0], a[1]))
+                return k
         else:
             return None
 
@@ -84,7 +90,7 @@ class Graph:
         if (un == True):
             k = []
             for a in allEdge:
-                l = [a[0], b[0]]
+                l = [a[0], a[1]]
                 l.sort()
                 l.append(a[-1])
                 k.append(tuple(l))
