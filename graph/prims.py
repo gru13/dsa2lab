@@ -11,20 +11,29 @@ def prim(G: Graph, vertex):
         cur_edge = []
         for a in visited_vertice:
             cur_edge += G.edgesOf(a, n=True)
-        # l1 = len(visited_edges)
-        # l2 = len(visited_vertice)
+
         cur_edge = set(cur_edge) - visited_edges
         cur_edge = list(cur_edge)
+
         cur_edge = list(sorted(cur_edge, key=lambda x:x[-1]))
-        visited_vertice.add(cur_edge[0][0])
-        visited_vertice.add(cur_edge[0][1])
-        visited_edges.add((cur_edge[0][0],cur_edge[0][1],cur_edge[0][2]))
-        visited_edges.add((cur_edge[0][1],cur_edge[0][0],cur_edge[0][2]))
-        # if l1 != len(visited_edges) and l2 != len(visited_vertice):
-        print(cur_edge[0])
-        # print(cur_edge)
-        # print(visited_vertice)
-        # break
+        while (cur_edge[0][1] in visited_vertice and cur_edge[0][0] in visited_vertice):
+            cur_edge.pop(0)
+
+        v1 = cur_edge[0][0]
+        v2 = cur_edge[0][1]
+        w = cur_edge[0][-1]
+        if v2 in visited_vertice and v1 in visited_vertice:
+            visited_edges.add((v1,v2,w))
+            visited_edges.add((v2,v1,w))
+        else:
+            visited_vertice.add(v2)
+            visited_vertice.add(v1)
+            visited_edges.add((v1,v2,w))
+            visited_edges.add((v2,v1,w))
+            yield cur_edge[0]
+
+        # print(visited_edges)
+
 
 
 
@@ -51,4 +60,8 @@ if __name__ == '__main__':
     # G.Print_adjMat()
     # G.Print_adjList()
     # print(G.allEdges(un = True))
-    prim(G, "C")
+    pt = prim(G, "C")
+    print()
+    print()
+    print()
+    print(list(pt), sep="\n")
