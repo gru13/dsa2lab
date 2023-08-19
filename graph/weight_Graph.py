@@ -90,12 +90,12 @@ if __name__ == '__main__':
     G.add_vertice(2)
     G.add_vertice(3)
     G.add_vertice(4)
-    G.add_vertice(5)
+    # G.add_vertice(5)
 
     G.add_edge(1, 2, 5, un=True)
     G.add_edge(1, 3, 5, un=True)
-    G.add_edge(2, 3, 5, un=True)
-
+    G.add_edge(2, 3, 5)
+    G.add_edge(4,4,8)
     # G.add_edge(4, 2, 5)
     # G.add_edge(4, 3, 5)
     # G.add_edge(4, 5, 5)
