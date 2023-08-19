@@ -12,7 +12,6 @@ def bfs(grph: Graph, vrt):
 
     if not grph.isVertice(vrt):
         return None
-        
     q = Queue()
     q.enQueue(vrt)
     visited = []
