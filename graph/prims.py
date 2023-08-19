@@ -22,6 +22,7 @@ def prim(G: Graph, vertex):
         visited_edges.add((v1, v2, w))
         visited_edges.add((v2, v1, w))
 
+        # to say no cycle
         if not (v2 in visited_vertice and v1 in visited_vertice):
             visited_vertice.add(v2)
             visited_vertice.add(v1)
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     # G.Print_adjMat()
     # G.Print_adjList()
     # print(G.allEdges(un = True))
-    pt = prim(G, "C")
+    pt = prim(G, "F")
     print()
     print()
     print()
