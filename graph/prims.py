@@ -12,23 +12,20 @@ def prim(G: Graph, vertex):
         for a in visited_vertice:
             cur_edge += G.edgesOf(a, n=True)
 
-        cur_edge = list(sorted(cur_edge, key=lambda x:x[-1]))
+        cur_edge = list(sorted(cur_edge, key=lambda x: x[-1]))
         while (cur_edge[0][1] in visited_vertice and cur_edge[0][0] in visited_vertice):
             cur_edge.pop(0)
 
         v1 = cur_edge[0][0]
         v2 = cur_edge[0][1]
         w = cur_edge[0][-1]
-        visited_edges.add((v1,v2,w))
-        visited_edges.add((v2,v1,w))
-    
-        if not(v2 in visited_vertice and v1 in visited_vertice):
+        visited_edges.add((v1, v2, w))
+        visited_edges.add((v2, v1, w))
+
+        if not (v2 in visited_vertice and v1 in visited_vertice):
             visited_vertice.add(v2)
             visited_vertice.add(v1)
             yield cur_edge[0]
-
-
-
 
 
 G = Graph()
