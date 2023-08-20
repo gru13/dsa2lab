@@ -1,6 +1,4 @@
 from weight_Graph import Graph
-from math import inf
-
 
 def prim(G: Graph, vertex):
     n = G.numberOfVertices()
