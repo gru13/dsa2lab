@@ -9,6 +9,7 @@ def kruskal(G: Graph):
     visted_edges = set()
     visted_vertices = set()
     edges.sort(key=lambda x: x[-1])
+    #while n-1 != len(visted_edges):
     while n != len(visted_vertices):
         min_ = edges.pop(0)
         if not (min_ in visted_edges and (min_[1], min_[0], min_[-1]) in visted_edges) and (disSet.find(min_[0]) != disSet.find(min_[1])):
@@ -31,6 +32,19 @@ if __name__ == '__main__':
     G.add_vertice("E")
     G.add_vertice("F")
 
+    # G.add_edge("A", "B", 6, un=True)
+    # G.add_edge("A", "C", 2, un=True)
+    # G.add_edge("A", "E", 6, un=True)
+
+    # G.add_edge("B", "D", 6, un=True)
+    # G.add_edge("B", "F", 2, un=True)
+
+    # G.add_edge("C", "D", 3, un=True)
+    # G.add_edge("C", "E", 2, un=True)
+    # G.add_edge("D", "F", 2, un=True)
+    # G.add_edge("E", "F", 2, un=True)
+#-------------------------------------------------------
+
     G.add_edge("A", "B", 4, un=True)
     G.add_edge("A", "C", 4, un=True)
     G.add_edge("B", "C", 2, un=True)
@@ -40,6 +54,22 @@ if __name__ == '__main__':
     G.add_edge("C", "F", 4, un=True)
     G.add_edge("C", "E", 2, un=True)
     G.add_edge("E", "F", 3, un=True)
+
+    # G.add_vertice(1)
+    # G.add_vertice(2)
+    # G.add_vertice(3)
+    # G.add_vertice(4)
+
+
+    # G.add_edge(1,2,2,un=True)
+    # G.add_edge(2,4,2,un=True)
+    # G.add_edge(4,3,2,un=True)
+    # G.add_edge(3,1,2,un=True)
+
+    # G.add_edge(1,4,5,un=True)
+    # G.add_edge(3,2,4,un=True)
+
+    
 
     # G.Print_adjMat()
     # G.Print_adjList()
