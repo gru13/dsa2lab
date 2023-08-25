@@ -1,6 +1,7 @@
 from ds import Stack, Graph
 
-def dfs(G:Graph, starting_vertex):
+
+def dfs(G: Graph, starting_vertex):
     if not G.isVertice(starting_vertex):
         return None
     visited = set()
@@ -18,8 +19,6 @@ def dfs(G:Graph, starting_vertex):
             stk.push(adj)
 
 
-
-
 # G = Graph(graph={0: [1, 2, 3], 1: [0, 2], 2: [0, 4], 3: [1], 4: [2]})
 # # G = Graph()
 # G.add_vertice(1)
@@ -33,7 +32,7 @@ def dfs(G:Graph, starting_vertex):
 # G.add_edge(4, 3)
 # G.add_edge(4, 5)
 
-G = Graph(graph={1:[2,3], 2:[1,4,5], 3:[1,4], 4:[2,3,5], 5:[2,4]})
+G = Graph(graph={1: [2, 3], 2: [1, 4, 5], 3: [1, 4], 4: [2, 3, 5], 5: [2, 4]})
 
 G.Print_adjList()
 

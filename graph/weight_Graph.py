@@ -5,6 +5,9 @@ class Graph:
     def __init__(self, graph: dict = {}) -> None:
         self.__graph: dict = graph
 
+    def __len__(self):
+        return len(self.__graph)
+
     def add_vertice(self, vertice):
         if vertice in self.__graph.keys():
             return
@@ -19,9 +22,9 @@ class Graph:
         else:
             return
 
-    def edgesOf(self, vertice, n = False):
+    def edgesOf(self, vertice, n=False):
         if vertice in self.__graph.keys():
-            if  n == False:
+            if n == False:
                 return self.__graph[vertice]
             else:
                 k = list()
